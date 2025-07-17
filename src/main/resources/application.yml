@@ -1,0 +1,28 @@
+server:
+  port: 8080
+spring:
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: none
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/bankcards
+    username: postgres
+    password: root
+  liquibase:
+    change-log: classpath:db/migration/db-changelog-master.yaml
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+
+
+
+security:
+  jwt:
+    secret: "mySuperSecretKey"
+    expirationMs: 3600000

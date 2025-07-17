@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: 7
+      author: Svyter
+      changes:
+        - createTable:
+            tableName: statements
+            columns:
+              - column:
+                  name: ID
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: type_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_type_id
+                    references: statement_types(ID)
+                    nullable: false
+              - column:
+                  name: status_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_status_id
+                    references: statement_statuses(ID)
+                    nullable: false
+              - column:
+                  name: comment
+                  type: text
+                  constraints:
+                    nullable: true
