@@ -1,4 +1,4 @@
-package com.example.bankcards.security;
+package com.example.bankcards.config;
 
 import com.example.bankcards.security.jwt.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
