@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 12
+      author: Svyter
+      changes:
+        - insert:
+            tableName: statement_types
+            columns:
+              - column:
+                  name: name
+                  value: BlockingCard
+        - insert:
+            tableName: statement_types
+            columns:
+              - column:
+                  name: name
+                  value: ExtensionCard
+        - insert:
+            tableName: statement_types
+            column:
+              - column:
+                  name: name
+                  value: CreationCard

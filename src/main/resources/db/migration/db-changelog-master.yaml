@@ -1,4 +1,7 @@
 databaseChangeLog:
   - includeAll:
-      path: db/migration/changes
+      path: db/migration/changes/schem
+      relativeToChangelogFile: false
+  - includeAll:
+      path: db/migration/changes/data
       relativeToChangelogFile: false

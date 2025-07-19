@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 11
+      author: Svyter
+      changes:
+        - insert:
+            tableName: statement_statuses
+            columns:
+              - column:
+                  name: name
+                  value: Processed
+        - insert:
+            tableName: statement_statuses
+            columns:
+              - column:
+                  name: name
+                  value: Rejected
+        - insert:
+            tableName: statement_statuses
+            columns:
+              - column:
+                  name: name
+                  value: Created

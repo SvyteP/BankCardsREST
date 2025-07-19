@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 8
+      author: Svyter
+      changes:
+        - insert:
+            tableName: account_roles
+            columns:
+              - column:
+                  name: name
+                  value: ADMIN
+        - insert:
+            tableName: account_roles
+            columns:
+              - column:
+                  name: name
+                  value: USER

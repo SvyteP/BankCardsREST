@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 13
+      author: Svyter
+      changes:
+        - insert:
+            tableName: accounts
+            columns:
+              - column:
+                  name: username
+                  value: GeneralAdmin
+              - column:
+                  name: full_name
+                  value: Test Administration
+              - column:
+                  name: email
+                  value: admin@admin.ru
+              - column:
+                  name: password
+                  value: $2a$12$H2d9H10tw.YjGdemWXN0UO3/jh0Zy5OAn0NFwiYWF6CEj5ONnb9dG
+              - column:
+                  name: account_role_id
+                  valueNumeric: 1
+              - column:
+                  name: account_status_id
+                  valueNumeric: 2
+              - column:
+                  name: registration_date
+                  valueComputed: current_timestamp

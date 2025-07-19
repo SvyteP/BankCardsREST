@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 9
+      author: Svyter
+      changes:
+        - insert:
+            tableName: account_statuses
+            columns:
+              - column:
+                  name: name
+                  value: Blocked
+        - insert:
+            tableName: account_statuses
+            columns:
+              - column:
+                  name: name
+                  value: Active

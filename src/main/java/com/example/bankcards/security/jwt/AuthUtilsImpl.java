@@ -1,7 +1,7 @@
 package com.example.bankcards.security.jwt;
 
 import com.example.bankcards.dto.AccountUserGetDTO;
-import com.example.bankcards.dto.AuthDTO;
+import com.example.bankcards.dto.AuthGetDTO;
 import com.example.bankcards.dto.base.ResponseDTO;
 import com.example.bankcards.entity.AccountUser;
 import com.example.bankcards.exception.NotFoundException;
@@ -31,17 +31,17 @@ public class AuthUtilsImpl implements AuthUtils {
     }
 
     @Override
-    public ResponseDTO<AuthDTO> authenticationUser(String login, String password) {
+    public ResponseDTO<AuthGetDTO> authenticationUser(String login, String password) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(login, password));
 
         AccountUser user = accountUserRepo.findByEmail(login).orElseThrow(() -> new NotFoundException(messageSource.getMessage(
-                "error.user.account.not.found",
-                new Object[]{"login " + login},
+                "error.account.user.not.found.login",
+                new Object[]{login},
                 Locale.getDefault())));
 
         String token = jwtUtils.generateToken(user);
         return new ResponseDTO<>(
-                new AuthDTO(
+                new AuthGetDTO(
                         new AccountUserGetDTO(user), token));
     }
 }

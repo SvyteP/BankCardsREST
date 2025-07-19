@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 10
+      author: Svyter
+      changes:
+        - insert:
+            tableName: card_statuses
+            columns:
+              - column:
+                  name: name
+                  value: Active
+        - insert:
+            tableName: card_statuses
+            columns:
+              - column:
+                  name: name
+                  value: Blocked
+        - insert:
+            tableName: card_statuses
+            columns:
+              - column:
+                  name: name
+                  value: Expired
+
+
