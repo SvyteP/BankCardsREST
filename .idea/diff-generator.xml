@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="DiffGenerationConfig">
-    <option name="updateChangeLogPath" value="src/main/resources/db/migration/db-changelog-master.yaml" />
-    <option name="updateDbConnectionName" value="bbb8929c-d6b7-416b-89c8-5a9a3e65423c__bankcards_public" />
-    <option name="updateLogLevel" value="DEBUG" />
-  </component>
-</project>
