@@ -1,8 +1,11 @@
 package com.example.bankcards.entity;
 
+import com.example.bankcards.dto.AccountUserRegDTO;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -33,6 +36,18 @@ public class AccountUser {
     private AccountStatus accountStatus;
 
     @Column(name = "registration_date")
-    private Date registrationDate;
+    private LocalDate registrationDate;
 
+    public AccountUser() {
+    }
+
+    public AccountUser(AccountUserRegDTO regDTO, AccountRole role, AccountStatus status, String password) {
+        this.userName = regDTO.userName();
+        this.fullName = regDTO.fullName();
+        this.email = regDTO.email();
+        this.password = password;
+        this.role = role;
+        this.accountStatus = status;
+        this.registrationDate = LocalDate.now();
+    }
 }
